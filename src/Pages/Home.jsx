@@ -7,11 +7,15 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactsSection } from "@/components/ContactsSection";
 import { Footer } from "@/components/Footer";
-
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Yared's Portfolio</title>
+      </Helmet>
+
       <ThemeToggle />
       <StarBackground />
       <Navbar />
@@ -22,9 +26,9 @@ const Home = () => {
         <ProjectsSection />
         <ContactsSection />
       </main>
-
       <Footer />
     </div>
   );
 };
+
 export default Home;
