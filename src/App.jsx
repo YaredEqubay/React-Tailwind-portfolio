@@ -1,18 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound'; 
-import {Toaster} from "@/components/ui/toaster"
+import { Toaster } from '@/components/ui/toaster';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = "Yared's Portfolio";
+  }, []);
+
   return (
     <>
-    <Toaster />
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+      <Toaster />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
